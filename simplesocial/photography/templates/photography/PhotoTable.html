@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+<table>
+    <tr>
+        <td><img id="myImage" src="{% static "media/P3160242.jpg" %}" alt="no pic"
+                style="width:388px;height:518px;margin:15px" </td>
+
+        <td><img src="{% static "media/P2150132rot.jpg" %}" alt="no pic" style="width:388px;height:518px;margin:15px"
+                </td>
+
+            {% for photo in latest_photos %}
+            <h1>photo namne: </h1>
+            {{photo}}
+        <td> <img src="{% static 'media/' %}{{photo}}" alt="no pic" style="width:518px;height:388px;margin: 15px;">
+        </td>
+
+        <button onclick='next()'>Next?</button>
+
+        {% endfor %}
+        <script>
+            function next() { }
+
+        </script>
+
+
+
+
+
+        <!-- <button onclick="document.getElementById('myImage').src='{{photo}}'">Turn on the
+                lightn</button> -->
+
+
+        <!-- <button onclick="document.getElementById('myImage').src='{{photo}}'">Turn on the
+            lightn</button> -->
+        <!-- <button onclick="document.getElementById('myImage').src=('/static/media/'){{photo}}">Turn on the
+            light</button> -->
+
+        <!-- <button onclick=" document.getElementById('myImage').src='/static/media/P2150132rot.jpg'">Turn on the
+                light</button> -->
+
+
+    </tr>
+    <tr>
+        <td><img src=" {% static "media/PA270105.jpg" %}" alt="no pic" style="width:388px;height:518px;margin: 15px">
+        </td>
+        <td><img src="{% static "media/P4270067.jpg" %}" alt="no pic" style="width:388px;height:518px;margin: 15px;">
+        </td>
+    </tr>
+    <tr>
+        <td><img src="{% static "media/P6070369.jpg" %}" alt="no pic" style="width:388px;height:518px; margin: 15px;">
+        </td>
+        <td><img src="{% static "media/PC040174.jpg" %}" alt="no pic" style="width:388px;height:518px;margin: 15px">
+        </td>
+    </tr>
+    <tr>
+        <td><img src="{% static "media/PB150274.jpg" %}" alt="no pic" style="width:388px;height:518px;margin: 15px">
+        </td>
+        <td><img src="{% static "media/PB080422.jpg" %}" alt="no pic" style="width:388px;height:518px;margin: 15px">
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

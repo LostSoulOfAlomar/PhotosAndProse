@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+<table>
+    <!-- <tr>
+
+
+        <h1>photo namne: </h1>
+        {{latest_photos}}
+        <td> <img id="myImage" src="{% static 'media/' %}{{latest_photos.0}}" alt=" no pic"
+                style="width:518px;height:388px;margin: 15px;">
+        </td>
+
+    </tr> -->
+    <tr>
+        <td>
+            rrrrr
+            <img id="myImage" src="{% static 'media/' %}{{latest_photos.0}}" alt=" no pic"
+                style="width:518px;height:388px;margin: 15px;">
+            {% for photo in latest_photos%}
+            <button onclick="document.getElementById('myImage').src=('/static/media/{{photo}}')">Next</button>
+            {% endfor %}
+
+        </td>
+
+
+
+    </tr>
+
+
+</table>
+{% endblock %}

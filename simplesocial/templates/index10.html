@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+<head>
+    <title>Joe Sevita</title>
+
+    <link rel="stylesheet" href="{% static 'simplesocial/css/960_12_col.css'%}">
+    <!-- <script src="{% static 'simplesocial/js/main.js' %}" type="text/javascript"></script> -->
+    <style>
+        * {
+            font-family: Arial, Verdana, sans-serif;
+            color: #573f27;
+            text-align: center;
+        }
+
+        #nav,
+        #feature,
+        .article,
+        .photog,
+        #footer {
+
+            background-color: #efefef;
+            margin-top: 20px;
+            padding: 10px 0px 5px 0px;
+
+
+        }
+
+        .article {
+            height: 350px;
+        }
+
+        .photog {
+            height: 350px;
+        }
+
+        #feature {
+            height: 200px;
+        }
+
+        li {
+            display: inline;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container_12 clearfix">
+        <div id="header" class="grid_12">
+            <h2>JOE SEVITA</h2>
+            <div id="nav">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'posts:create' %}">Post</a></li>
+                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                    <li><a href="{% url 'groups:create' %}">Create Group</a></li>
+                    <li><a href="{% url 'accounts:contact' %}">Contact</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Log out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Log in</a></li>
+                    <li><a href="{% url 'accounts:contact' %}">Contact</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div id="feature" class="grid_12">
+            <p strong style="color:black;font-size: 110%;">Photography, Prose, Verse and Games</p>
+            <p><em>"Big Ordo" my first book is now underway.</em></p>
+            <p>"And because the story has been told so often, it has taken root in every man’s mind. And, as
+                with all retold tales that are in people’s hearts, there are only good and bad things and black and
+                white
+                things and good and evil things and no in-between anywhere."
+                - Steinbeck "The Pearl"
+            <p><br>Without deviation from the norm, progress is not possible. - Frank Zappa</p>
+            </p>
+        </div>
+        <div class="photog grid_4">
+            <a href="{% url 'photography:photos_all' %}" strong style="color:black">Fashion, Portrait and Food
+                Photography</a>
+            <!-- <div class="slider-outer">
+                <img src="{% static "media/arrow-left.png" %}" class="prev" alt="prev"> -->
+            <!-- <div class="slider-inner"> -->
+            <br>
+            <p>
+                <img src="{% static "media/PA270105.jpg" %}" class="active" alt="no pic"
+                    style="width:194px;height:256px;">
+            </p>
+            <!-- <img src="{% static "media/P2060261.jpg" %}" alt="no pic" style="width:194px;height:256px;">
+                </div> -->
+            <!-- <img src="{% static "media/arrow-right.png" %}" class="next" alt="next"> -->
+        </div>
+        <div class="article grid_4">
+            <p>Prose and Verse</p>
+            <p><em>When he woke the panic set in. Knowing that only more sleep will quell, he made his way from the
+                    medicine
+                    cabinet
+                    to the coffee and back. The realization of where he was what he'd done never leaves him. They watch
+                    him
+                    carefully. And years go by, nothing. His complexity studies
+                    continue, attempts to pull into the quadratic third and fourth norms fail. A life's work a
+                    criminal
+                    offense.</p></em>
+            <br>
+            <p>For a Sunday the room was unusually empty. </p>
+            </p>
+        </div>
+        <div class="article grid_4">
+            <!--  -->
+            Games and Utilities
+        </div>
+        <div id="footer" class="grid_12">
+            <p>&copy; Copyright 2020</p>
+        </div>
+    </div><!-- .container_12 -->
+</body>
+
+</html>

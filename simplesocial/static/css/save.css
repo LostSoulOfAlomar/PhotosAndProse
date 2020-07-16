@@ -1,0 +1,17 @@
+.myscroll {
+    overflow: auto;
+  }
+  
+  body {
+    margin: 0;
+    overflow: auto;
+    background-color:#010c06;
+    color:black;
+  }
+  
+  .book{
+    font-size:20px;
+    font-family:courier;
+    color:black;
+  }
+  

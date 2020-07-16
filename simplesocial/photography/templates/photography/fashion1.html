@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+  {% block content %}
+      <h1>welcome to joe fashion2</h1>
+      {{one}}
+      <!-- <img src= "{% static "media/P7270086.jpg" %}" alt="no pic" style="width:518px;height:388px;margin: 20px"> -->
+      <img src= "/static/media/{{one}}" alt="no pic" style="width:388px;height:518px;margin: 20px">
+    <!--  <h1>{{ text|upper }}</h1> -->
+
+  {% endblock %}
