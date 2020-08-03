@@ -29,5 +29,7 @@ urlpatterns = [
     url(r"^groups/", include("groups.urls", namespace="groups")),
     path('photography/', include(('photography.urls',
                                   'photography'), namespace='photography')),
+    path('books/', include(('books.urls',
+                            'books'), namespace='books')),
     # path('games/', include(('treadmillgame.urls', 'games'), namespace='games')),
 ]
